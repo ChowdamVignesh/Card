@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&family=Nata+Sans&family=Smooch+Sans:wght@100..900&display=swap");
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*/ * {
+  margin: 0;
+  padding: 0;
+  font-family: "Samsung Sharp Sans Bold", sans-serif;
+  line-height: 1.4;
+}
+
+.contanoir {
+  perspective: 1000px;
+  width: 350px;
+  height: 250px;
+  margin: 100px auto;
+}
+.card {
+  height: 100%;
+  width: 100%;
+  border-radius: 200px rgba(188, 9, 9, 0.585);
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+.contanoir:hover .card {
+  transform: rotateY(180deg);
+}
+.front img {
+  max-width: 70%;
+  display: block;
+  margin: 30px auto;
+}
+.front,
+.backCard {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.front {
+  background-color: #ffffff;
+  padding: 20px;
+}
+/* .backCard-content:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+} */
+.backCard {
+  position: relative;
+  padding: 1px 1px 20px;
+  border-radius: 15px;
+  background: #020024;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(10, 184, 207, 1) 24%,
+    rgba(9, 9, 121, 1) 61%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-size: 300% 300%;
+  animation: flow-border 3s linear infinite;
+  transform: rotateY(180deg);
+}
+.backcard-content {
+  background: #eed8ae;
+  background: radial-gradient(
+    circle,
+    rgba(238, 216, 174, 1) 0%,
+    rgba(148, 187, 233, 1) 0%
+  );
+  background-size: 300% 300%;
+  /* animation: flow-border 5s linear infinite; */
+  font-weight: 50px;
+  margin: 5px;
+  padding: 5px 10px;
+  text-align: justify;
+  text-transform: uppercase;
+  transition: 0.5s;
+  /* background-size: 200% auto; */
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  /* border-radius: 10px; */
+  display: block;
+  border-radius: 13px; /* Slightly smaller than parent for border effect */
+  /* padding:50px,50px; */
+  height: 100%;
+  overflow-y: auto;
+}
+.name {
+  font-size: 12px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #1500d4;
+  margin-bottom: 8px;
+  /* animation: blink 5s infinite; */
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 0;
+  background: #833ab4;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  /* background-size: 300% 300%; */
+  /* animation: flow-border  linear infinite; */
+  background-clip: text;
+  color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  /* animation: colorFade 6s; */
+  animation: typewriter 8s steps(40);
+}
+.description {
+  font-size: 0.75rem;
+  color: white(206, 9, 9);
+  margin-bottom: 10px;
+  font-family: "Nata Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+p a {
+  font-style: italic;
+  text-decoration: none;
+  animation: colorChange 3s infinite;
+}
+.btn {
+  padding: 6px 12px;
+  border: 1px solid #4caf50;
+  background-color: #00ffff;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5px;
+}
+.btn:hover {
+  background-color: #004382;
+  color: white;
+  border-color: #43a047;
+  transition: 1.6s;
+}
+@keyframes colorFade {
+  0% {
+    color: #ff0000; /* Red */
+  }
+  20% {
+    color: #ffa500; /* Orange */
+  }
+  40% {
+    color: #ffff00; /* Yellow */
+  }
+  60% {
+    color: #008000; /* Green */
+  }
+  80% {
+    color: #0000ff; /* Blue */
+  }
+  100% {
+    color: #4b0082; /* Indigo */
+  }
+}
+
+@keyframes colorChange {
+  100% {
+    color: #1bcd7a;
+  }
+  50% {
+    color: #f00;
+  }
+  50% {
+    color: #4115a7;
+  }
+}
+@keyframes flow-border {
+  0% {
+    background-position: 0% 60%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+  0% {
+    /* background-clip: 0% 60%; */
+    color: 0% 60%;
+  }
+  100% {
+    /* background-clip: 100% 50%; */
+    color: 100% 50%;
+  }
+}
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
